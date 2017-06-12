@@ -1,0 +1,53 @@
+{
+	"name": "kio-ng2-markdown-extension",
+	"version": "0.0.0",
+	"description": "typings for kio-ng2-markdown extensions",
+	"typings": "release/index.d.ts",
+	"main": "release/index.js",
+	"scripts": {
+		"test": "ts-mocha ./src/**/*.spec.ts",
+		"pretest": "npm run build",
+		"test:watch": "./scripts/watch.sh test",
+		"postinstall": "npm run build",
+		"prestart": "npm run build",
+		"start": "npm run dev",
+		"dev": "./node_modules/.bin/nodemon -e ts --ignore dist/ --exec \"npm run dev\"",
+		"watch:test": "ts-mocha -w ./test/**/*.spec.ts",
+		"lint": "tslint ./src/**/*.ts ./test/**/*.ts",
+		"version": "npm run release",
+		"postversion": "git push && git push --tags",
+		"build": "npm run build:tsc",
+		"prebuild:release": "rm -rf ./build",
+		"postbuild:release": "rm -rf ./release; mv ./build ./release",
+		"build:release": "NODE_ENV=production npm run build",
+		"build:release:watch": "./scripts/watch.sh build:release",
+		"build:package": "NODE_ENV=package npm run build",
+		"build:tsc": "tsc -p tsconfig.release.json",
+		"package:minify": "uglifyjs release/index.js --source-map release/index.min.js.map --source-map-url release/index.js.map --compress --mangle --screw-ie8 --output release/index.min.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/afkmatze/kio-ng2-markdown-extension.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/afkmatze/kio-ng2-markdown-extension/issues"
+	},
+	"homepage": "https://github.com/afkmatze/kio-ng2-markdown-extension#readme",
+	"devDependencies": {
+		"@types/chai": "^4.0.0",
+		"@types/mocha": "^2.2.41",
+		"@types/node": "^7.0.29",
+		"mocha": "^3.4.2",
+		"nodemon": "^1.11.0",
+		"ts-mocha": "^1.0.3",
+		"ts-node": "^3.0.6",
+		"tslint": "^5.4.3",
+		"typescript": "^2.3.4"
+	},
+	"dependencies": {
+		"@types/showdown": "^1.4.32"
+	}
+}
