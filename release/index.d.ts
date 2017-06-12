@@ -1,3 +1,11 @@
+import { ExtensionImplementation, MatchingExtension, FormattingExtension, ExtensionProvider } from './interfaces';
+import { ExtensionTypes, ExtensionType, ExtensionTypeNames } from './types';
 export * from './enums';
 export * from './types';
 export * from './interfaces';
+export declare function nameOfType<T extends ExtensionTypes>(type: T): ExtensionTypeNames;
+export declare function isMatchingExtension<T extends ExtensionType>(other: any): other is MatchingExtension<T>;
+export declare function isFormattingExtension<T extends ExtensionType>(other: any): other is FormattingExtension<T>;
+export declare function isExtensionImplementation<T extends ExtensionType>(other: any): other is ExtensionImplementation<T>;
+export declare function isExtensionProvider(other: any): other is ExtensionProvider;
+export declare function isExtensionKey(other: any): other is string;

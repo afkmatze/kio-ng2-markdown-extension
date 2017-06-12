@@ -1,5 +1,6 @@
 /// <reference types="showdown" />
-import { ConverterOptions, Converter } from 'showdown';
+import { ConverterOptions, Converter, ConverterExtensions } from 'showdown';
+export { ConverterOptions, Converter, ConverterExtensions };
 import { ExtensionType } from '../types/extension';
 import { ExtensionTypes } from '../enums/extension.enum';
 export interface Formatter {
@@ -13,10 +14,14 @@ export interface MatchingExtension<T extends ExtensionType> extends Extension<T>
     replace: Formatter | string;
 }
 export interface FormattingExtension<T extends ExtensionType> extends Extension<T> {
-    format: Formatter;
+    filter: Formatter;
 }
 export declare type ExtensionImplementation<T extends ExtensionType> = MatchingExtension<T> | FormattingExtension<T>;
 export interface LangExtension extends Extension<ExtensionTypes.lang> {
 }
 export interface OutputExtension extends Extension<ExtensionTypes.output> {
 }
+export declare function provideExtension(): ExtensionImplementation<ExtensionTypes>[];
+export declare type ExtensionProvider = typeof provideExtension & {
+    name: string;
+};
