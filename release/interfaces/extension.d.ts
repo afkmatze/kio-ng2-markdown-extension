@@ -1,6 +1,6 @@
 /// <reference types="showdown" />
-import { ConverterOptions, Converter, ConverterExtensions } from '@types/showdown';
-export { ConverterOptions, Converter, ConverterExtensions };
+import { Converter, ConverterOptions, ConverterExtensions } from 'showdown';
+export { Converter, ConverterOptions, ConverterExtensions };
 import { ExtensionType } from '../types/extension';
 import { ExtensionTypes } from '../enums/extension.enum';
 export interface Formatter {
