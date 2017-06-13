@@ -19,7 +19,8 @@
 		"build": "npm run build:tsc",
 		"prebuild:release": "rm -rf ./build",
 		"postbuild:release": "rm -rf ./release; mv ./build ./release",
-		"build:release": "NODE_ENV=production npm run build",
+		"deploy:release": "./scripts/copy_release.sh",
+		"build:release": "NODE_ENV=production npm run build && npm run deploy:release",
 		"build:release:watch": "./scripts/watch.sh build:release",
 		"build:package": "NODE_ENV=package npm run build",
 		"build:tsc": "tsc -p tsconfig.release.json",
@@ -36,6 +37,9 @@
 		"url": "https://github.com/afkmatze/kio-ng2-markdown-extension/issues"
 	},
 	"homepage": "https://github.com/afkmatze/kio-ng2-markdown-extension#readme",
+	"peerDependencies": {
+		"showdown": "^1.7.1"
+	},
 	"devDependencies": {
 		"@types/chai": "^4.0.0",
 		"@types/mocha": "^2.2.41",
