@@ -37,7 +37,7 @@
 	},
 	"homepage": "https://github.com/afkmatze/kio-ng2-markdown-extension#readme",
 	"peerDependencies": {
-		"@types/showdown": "^1.4.32",		
+		"@types/showdown": "^1.4.32",
 		"showdown": "^1.7.1"
 	},
 	"devDependencies": {

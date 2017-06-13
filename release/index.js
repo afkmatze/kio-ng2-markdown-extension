@@ -24,7 +24,7 @@ function isMatchingExtension(other) {
 }
 exports.isMatchingExtension = isMatchingExtension;
 function isFormattingExtension(other) {
-    return ('filter' in other && 'function' === typeof other.filter && other.filter.length > 1);
+    return ('filter' in other && 'function' === typeof other.filter && other.filter.length > 0);
 }
 exports.isFormattingExtension = isFormattingExtension;
 function isExtensionImplementation(other) {
