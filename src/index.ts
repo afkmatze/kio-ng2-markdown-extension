@@ -34,7 +34,7 @@ export function isMatchingExtension <T extends ExtensionType>( other:any ):other
 }
 
 export function isFormattingExtension <T extends ExtensionType>( other:any ):other is FormattingExtension<T> {
-  return ( 'filter' in other && 'function' === typeof other.filter && other.filter.length > 1 )
+  return ( 'filter' in other && 'function' === typeof other.filter && other.filter.length > 0 )
 }
 
 export function isExtensionImplementation <T extends ExtensionType> ( other:any ):other is ExtensionImplementation<T> {

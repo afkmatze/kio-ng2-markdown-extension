@@ -4,7 +4,10 @@ SCRIPT_PATH="$(dirname "${0}")"
 SCRIPT_FILE="$(basename "${0}")"
 PROJECT_ROOT="$(cd "$(dirname "${0}")/.."; pwd)"
 
-NODEMON_BIN="${PROJECT_ROOT}/node_modules/.bin/nodemon"
+NODEMON_BIN="$(which nodemon)"
+if [[ ! -x "${NODEMON_BIN}" ]]; then
+  NODEMON_BIN="${PROJECT_ROOT}/node_modules/.bin/nodemon"
+fi
 
 NPM_COMMAND=${1:-build}
 

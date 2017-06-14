@@ -1,6 +1,6 @@
-import { Converter, ConvertertOptions, ConverterExtensions } from 'showdown'
+import { Converter, ConverterOptions, ConverterExtensions } from 'showdown'
 
-export import { Converter, ConvertertOptions, ConverterExtensions }
+export { Converter, ConverterOptions, ConverterExtensions }
 
 import { ExtensionTypeNames, ExtensionTypeByName, ExtensionType } from '../types/extension'
 import { ExtensionTypes } from '../enums/extension.enum'
