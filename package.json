@@ -1,6 +1,6 @@
 {
 	"name": "kio-ng2-markdown-extension",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "typings for kio-ng2-markdown extensions",
 	"typings": "release/index.d.ts",
 	"main": "release/index.js",
@@ -13,7 +13,6 @@
 		"dev": "./node_modules/.bin/nodemon -e ts --ignore dist/ --exec \"npm run dev\"",
 		"watch:test": "ts-mocha -w ./test/**/*.spec.ts",
 		"lint": "tslint ./src/**/*.ts ./test/**/*.ts",
-		"version": "npm run release",
 		"postversion": "git push && git push --tags",
 		"build": "npm run build:tsc",
 		"prebuild:release": "rm -rf ./build",
